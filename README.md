@@ -25,7 +25,7 @@ Voici l'organisation des acteurs après `ActorSystem` dans notre projet :
  * `Player` reçoit la mesure et joue les notes en MIDI.
 
 ## Comment les acteurs communiquent-ils ?
-![diagrame-sequence-actor.png](diagrame-sequence-actor.png)
+![diagrame-sequence-actor.png](img/diagrame-sequence-actor.png)
 "*Conductor reçoit un message StartGame, puis lance deux dés et envoie un message GetMeasure (result) au
 Provider où result est la somme des deux dès. Provider enverra un message à Conductor avec la mesure
 qu’il y a obtenue grâce aux deux tables. Il communiquera avec l’acteur DataBase pour trouver la bonne
