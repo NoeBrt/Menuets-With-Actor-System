@@ -14,7 +14,7 @@ sbt run
 
 Voici l'organisation des acteurs après `ActorSystem` dans notre projet :
 
-![mermaid-diagram(1).png](mermaid-diagram%281%29.png)
+![mermaid-diagram(1).png](img/mermaid-diagram%281%29.png)
 
 * `Conductor` est l'acteur principal. Il lance les dés, demande une mesure au `Provider`, l'envoie au `Player`, puis relance un nouveau tour.
 
@@ -25,11 +25,17 @@ Voici l'organisation des acteurs après `ActorSystem` dans notre projet :
  * `Player` reçoit la mesure et joue les notes en MIDI.
 
 ## Comment les acteurs communiquent-ils ?
+
+### Schema de communication
+![akka_actors_communication.svg](img/akka_actors_communication.svg)
+
+### Diagramme de séquence
 ![diagrame-sequence-actor.png](img/diagrame-sequence-actor.png)
 "*Conductor reçoit un message StartGame, puis lance deux dés et envoie un message GetMeasure (result) au
 Provider où result est la somme des deux dès. Provider enverra un message à Conductor avec la mesure
 qu’il y a obtenue grâce aux deux tables. Il communiquera avec l’acteur DataBase pour trouver la bonne
 mesure.*"
+
 
 ## Auteurs
 upmc
